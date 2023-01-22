@@ -1,0 +1,117 @@
+:root{
+    --textColor: white;
+    --selectionColor: white;
+}
+
+*{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+    font-family: 'Calibri';
+}
+
+body{
+    background-color: bisque;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+a{
+    color: gray;
+    text-decoration: none;
+}
+h1{
+    margin:25px;
+}
+
+.colors{
+    display: flex;
+    width: 100%;
+}
+
+.randomcolor{
+    margin: 5px;
+    width: 100%;
+    height:300px;
+
+    font-size: 24px;
+
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    
+    border: solid;
+    border-width: 5px;
+    border-radius: 5px;
+}
+.randomcolor::selection{
+    color: var(--textColor);
+    background-color: var(--selectionColor);
+}
+
+#rerollButton {
+    width: 100px;
+    height: 65px;
+    margin: 25px;
+    padding: auto;
+
+    background-color: beige;
+    font-weight: bold;
+
+    border-radius: 5px;
+    border-color: azure;
+}
+
+@keyframes shakeX {
+    from,to {
+        transform: translate3d(0, 0, 0);
+    }
+
+    10%,30%,50%,70%,90% {
+        transform: translate3d(-5px, 0, 0);
+    }
+
+    20%,40%,60%,80% {
+        transform: translate3d(5px, 0, 0);
+    }
+}
+
+.shakeX {
+    animation-name: shakeX;
+    animation-duration: 1s;
+    animation-fill-mode: both;
+}
+
+@keyframes tada {
+    from {
+        transform: scale3d(1, 1, 1);
+    }
+
+    10%,20% {
+        transform: scale3d(0.9, 0.9, 0.9) rotate3d(0, 0, 1, -3deg);
+    }
+
+    30%,50%,70%,90% {
+        transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, 3deg);
+    }
+
+    40%,60%,80% {
+        transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, -3deg);
+    }
+
+    to {
+        transform: scale3d(1, 1, 1);
+    }
+}
+  
+.tada {
+    animation-name: tada;
+    animation-duration: 1s;
+    animation-fill-mode: both;
+}
